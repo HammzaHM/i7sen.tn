@@ -1,8 +1,15 @@
-const { AuthenticationService, JWTStrategy } = require('@feathersjs/authentication');
-const { LocalStrategy } = require('@feathersjs/authentication-local');
-const { expressOauth } = require('@feathersjs/authentication-oauth');
+import {
+  AuthenticationService,
+  JWTStrategy
+} from '@feathersjs/authentication';
+import {
+  LocalStrategy
+} from '@feathersjs/authentication-local';
+import {
+  expressOauth
+} from '@feathersjs/authentication-oauth';
 
-module.exports = app => {
+const authentication = app => {
   const authentication = new AuthenticationService(app);
 
   authentication.register('jwt', new JWTStrategy());
@@ -11,3 +18,5 @@ module.exports = app => {
   app.use('/authentication', authentication);
   app.configure(expressOauth());
 };
+
+export {authentication};
