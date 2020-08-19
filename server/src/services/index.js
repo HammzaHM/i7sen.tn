@@ -1,5 +1,6 @@
-const members = require('./members/members.service.js');
+import members from './members/members.service.js';
+
 // eslint-disable-next-line no-unused-vars
-module.exports = function (app) {
+export default function (app) {
   app.configure(members);
 };

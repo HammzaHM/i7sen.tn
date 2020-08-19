@@ -1,9 +1,10 @@
-// Initializes the `members` service on path `/members`
-const { Members } = require('./members.class');
-const createModel = require('../../models/members.model');
-const hooks = require('./members.hooks');
 
-module.exports = function (app) {
+import { Members } from './members.class';
+
+import createModel from '../../models/members.model';
+import hooks from './members.hooks';
+
+export default function (app) {
   const options = {
     Model: createModel(app),
     paginate: app.get('paginate')
@@ -16,4 +17,4 @@ module.exports = function (app) {
   const service = app.service('members');
 
   service.hooks(hooks);
-};
+}

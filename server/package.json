@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "homepage": "",
   "private": true,
-  "main": "src",
   "keywords": [
     "feathers"
   ],
@@ -24,9 +23,10 @@
     "yarn": ">= 0.18.0"
   },
   "scripts": {
-    "test": "yarn run lint && yarn run mocha",
-    "lint": "eslint src/. test/. --config .eslintrc.json --fix",
-    "dev": "nodemon src/",
+    "cjstoes6": "cjs-to-es6 --verbose src",
+    "test": "yarn run lint && yarn run jest",
+    "lint": "eslint src/. test/. --config .eslintrc.json",
+    "dev": "nodemon src/ --exec babel-node",
     "start": "node src/",
     "mocha": "mocha test/ --recursive --exit"
   },
@@ -55,6 +55,9 @@
     "winston": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
     "axios": "^0.19.2",
     "eslint": "^7.4.0",
     "mocha": "^8.0.1",
