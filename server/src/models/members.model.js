@@ -7,7 +7,13 @@ const DataTypes = Sequelize.DataTypes;
 export default function (app) {
   const sequelizeClient = app.get('sequelizeClient');
   const members = sequelizeClient.define('members', {
-  
+    id: {
+      type: DataTypes.UUID,
+      unique: true,
+      autoIncrement: true,
+      primaryKey: true,
+
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -17,8 +23,24 @@ export default function (app) {
       type: DataTypes.STRING,
       allowNull: false
     },
-  
-  
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    adress: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    codePostal: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    OfficialPaperLink: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    createdAt: Sequelize.DATE,
+    updatedAt: Sequelize.DATE,
   }, {
     hooks: {
       beforeCount(options) {
