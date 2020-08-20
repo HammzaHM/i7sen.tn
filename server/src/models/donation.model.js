@@ -26,7 +26,8 @@ export default function (app) {
         donationValue: {
             type: DataTypes.FLOAT,
             allowNull: false,
-        }
+        },
+        createdAt: Sequelize.DATE,
     }, {
         hooks: {
             beforeCount(options) {

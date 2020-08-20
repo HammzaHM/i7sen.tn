@@ -13,21 +13,30 @@ export default function (app) {
             primaryKey: true,
             autoIncrement: true,
             unique:true
-        },
+        },        
         name: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: false
         },
-        adress: {
-            type: DataTypes.STRING,
-            allowNull: false
+        birthdate:{
+            type:DataTypes.DATE,
+            allowNull:false
         },
+        birthPlace:{
+            type:DataTypes.STRING,
+            allowNull:false
+        },
+       
+        
         phone: {
             type: DataTypes.STRING(8),
         },
         job: {
             type: DataTypes.STRING,
+        },
+        healthSituation:{
+         type:DataTypes.STRING
         },
         CivilStatus: {
             type: DataTypes.ENUM('Single', 'Married', 'Widow', 'Divorced'),
@@ -39,6 +48,10 @@ export default function (app) {
         },
         givenDonation: {
             type: DataTypes.ARRAY(DataTypes.UUID),
+        },
+        houseStatus:{
+            type:DataTypes.UUID,
+            allowNull:false
         },
 
     }, {
