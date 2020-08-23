@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 import logger from './logger';
 import app  from './app';
+import 'bulma/css/bulma.css';
+
 const port = app.get('port');
 const server = app.listen(port);
 
