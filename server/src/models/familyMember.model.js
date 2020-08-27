@@ -31,6 +31,7 @@ export default function (app) {
         },
         educationLevel: {
             type: DataTypes.STRING,
+            field:"education_level"
         },
         skills: {
             type: DataTypes.ARRAY
@@ -38,8 +39,12 @@ export default function (app) {
         CNAM: {
             type: DataTypes.STRING
         },
-        healthSituation: {
-            type: DataTypes.UUID
+        // healthSituation: {
+        //     type: DataTypes.UUID
+        // },
+        cinURl:{
+            type:DataTypes.STRING,
+            field:"cin_url"
         }
 
     }, {

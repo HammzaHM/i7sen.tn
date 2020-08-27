@@ -33,11 +33,13 @@ export default function (app) {
     },
     codePostal: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      field:"code_postal"
     },
     OfficialPaperLink: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      field:"official_paper_url"
     },
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE,
