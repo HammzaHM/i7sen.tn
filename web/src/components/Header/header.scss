@@ -1,0 +1,24 @@
+@import "../../sass/colors.scss";
+
+header {
+    background-color: rebeccapurple;
+    margin-bottom: 1.45rem;
+    padding: 1em;
+    .container {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .container__link {
+        color: $white;
+    }
+
+    .container__link-title {
+        font-size: 40px;   
+        color: $white;
+    }
+
+}
+
