@@ -11,21 +11,23 @@ export default function (app) {
             unique: true,
             primaryKey: true,
         },
-        donorId: {
-            type: DataTypes.UUID,
-            allowNull: false,
-        },
-        doneeId: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+        // donorId: {
+        //     type: DataTypes.UUID,
+        //     allowNull: false,
+        // },
+        // doneeId: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
         donationType: {
             type: DataTypes.ENUM('Bourse universitaire', 'Produit alimentaire', 'Bourse mensuelle', 'Aide Medical', 'Aide scolaire'),
             allowNull: false,
+            field:"donation_type"
         },
         donationValue: {
             type: DataTypes.FLOAT,
             allowNull: false,
+            field:"donation_value"
         },
         createdAt: Sequelize.DATE,
     }, {

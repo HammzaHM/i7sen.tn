@@ -14,7 +14,8 @@ export default function (app) {
             autoIncrement: true,
         },
         houseType: {
-            type: DataTypes.ENUM('rent', 'owner', 'borrow')
+            type: DataTypes.ENUM('rent', 'owner', 'borrow'),
+            field:"house_type"
         },
         adress: {
             type: DataTypes.STRING,
@@ -22,22 +23,27 @@ export default function (app) {
         },
         cleanWater: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: false,
+            field:"clean_water"
         },
         electricCurrent: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: false,
+            field:"electric_current"
         },
         sanitaryEquipment: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: false,
+            field:"sanitary_equipment"
         },
         contactedAuthoritiesForHelp:{
             type:DataTypes.ARRAY(String),
-            allowNull:false
+            allowNull:false,
+            field:"contacted_authorities_for_help"
         },
         generalRemarque: {
             type: DataTypes.STRING,
+            field:"general_remarque"
         }
 
     }, {

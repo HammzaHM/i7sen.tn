@@ -13,7 +13,7 @@ export default function (app) {
             primaryKey: true,
             autoIncrement: true,
         },
-         illness: {
+        illness: {
             type: DataTypes.ARRAY(String),
             allowNul:false
         },
